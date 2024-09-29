@@ -13,6 +13,9 @@ class TodoUpdate(TodoBase):
 
 class TodoResponse(TodoBase):
     id: int
+    title: str
+    description: str
+    completed: bool
 
     class Config:
-        orm_mode = True
+        from_attributes = True
