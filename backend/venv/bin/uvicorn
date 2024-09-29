@@ -1,4 +1,4 @@
-#!/Users/mwo/Documents/GitHub/to-do-app/backend/venv/bin/python
+#!/Users/mwo/Documents/GitHub/to-do-app/backend/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
