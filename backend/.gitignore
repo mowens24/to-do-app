@@ -5,3 +5,4 @@
 !.elasticbeanstalk/*.global.yml
 # Virtual Environment
 venv/
+todos.db
