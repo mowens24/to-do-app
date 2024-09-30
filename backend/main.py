@@ -47,11 +47,19 @@ def delete_todo(todo_id: int, db: Session = Depends(get_db)):
 
 
 
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+origins = [
+    "https://main.dhqkt4d74kvss.amplifyapp.com/",  # Replace with your Amplify app's URL
+    "http://localhost:3000",  # For local development
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Frontend URL
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
