@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import TodoItem from './TodoItem';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 interface Todo {
   id: number;
   title: string;
@@ -18,7 +20,7 @@ const TodoList: React.FC = () => {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/todos/');
+      const response = await axios.get(`${apiUrl}/api/todos`);
       setTodos(response.data);
     } catch (error) {
       console.error('Error fetching todos:', error);

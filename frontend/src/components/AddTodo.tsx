@@ -15,7 +15,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ onAdd }) => {
     e.preventDefault();
     if (!title) return;
     try {
-      await axios.post('${apiUrl}/api/todos', { title, description, completed: false });
+      await axios.post(`${apiUrl}/api/todos`, { title, description, completed: false });
       setTitle('');
       setDescription('');
       onAdd();
