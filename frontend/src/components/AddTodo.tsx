@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+const apiUrl = process.env.REACT_APP_API_URL;
+
 
 interface AddTodoProps {
   onAdd: () => void;
@@ -13,7 +15,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ onAdd }) => {
     e.preventDefault();
     if (!title) return;
     try {
-      await axios.post('http://localhost:8000/todos/', { title, description, completed: false });
+      await axios.post('${apiUrl}/api/todos', { title, description, completed: false });
       setTitle('');
       setDescription('');
       onAdd();
